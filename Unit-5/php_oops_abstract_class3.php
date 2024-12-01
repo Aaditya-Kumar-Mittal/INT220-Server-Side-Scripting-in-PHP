@@ -1,0 +1,24 @@
+<?php
+
+abstract class A
+{
+  abstract protected function grades($marks);
+}
+
+class B extends A
+{
+  public function grades($marks, $wish = "Dear Student")
+  {
+    if ($marks >= 90) {
+      $grade = "A Grade";
+    } else if ($marks >= 70 and $marks < 90) {
+      $grade = "B grade";
+    } else if ($marks >= 40 and $marks < 70) {
+      $grade = "C grade";
+    }
+    return "$wish, $grade for $marks";
+  }
+}
+
+$obj = new B;
+echo $obj->grades(67);
